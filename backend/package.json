@@ -1,0 +1,73 @@
+{
+  "name": "isma-sports-complex-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Isma Sports Complex - Sales & Inventory Management System",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon --exec tsx server.ts",
+    "build": "prisma generate || echo 'Prisma generate skipped (file may be locked)' && node node_modules/typescript/bin/tsc",
+    "start": "node index.js",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
+    "vercel-build": "prisma generate && node node_modules/typescript/bin/tsc",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:deploy": "prisma migrate deploy",
+    "prisma:studio": "prisma studio",
+    "prisma:seed": "tsx src/prisma/seed.ts"
+  },
+  "keywords": [
+    "express",
+    "prisma",
+    "postgresql",
+    "redis",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/joi": "^17.2.2",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^22.19.2",
+    "@types/node-cron": "^3.0.11",
+    "@types/nodemailer": "^7.0.4",
+    "@types/pdfkit": "^0.17.4",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "express-rate-limit": "^7.5.1",
+    "express-validator": "^7.3.1",
+    "helmet": "^8.1.0",
+    "ioredis": "^5.8.2",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.1",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.11",
+    "pdfkit": "^0.15.2",
+    "puppeteer": "^24.33.0",
+    "ts-node": "^10.9.2",
+    "twilio": "^5.10.7",
+    "typescript": "^5.9.3",
+    "winston": "^3.19.0",
+    "winston-daily-rotate-file": "^5.0.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/twilio": "^3.19.2",
+    "@types/xlsx": "^0.0.35",
+    "nodemon": "^3.1.11",
+    "prisma": "^5.22.0",
+    "tsx": "^4.21.0"
+  },
+  "prisma": {
+    "seed": "tsx src/prisma/seed.ts"
+  }
+}

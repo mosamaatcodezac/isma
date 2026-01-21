@@ -1,0 +1,238 @@
+// Available permissions in the system
+export const AVAILABLE_PERMISSIONS = {
+  // Sales & Billing
+  SALES_VIEW: "/sales",
+  SALES_CREATE: "/sales/entry",
+  SALES_VIEW_BILL: "/sales/bill/:billNumber",
+  SALES_CANCEL: "sales:cancel",
+  SALES_ADD_PAYMENT: "sales:add_payment",
+  
+  // Inventory
+  INVENTORY_VIEW: "/inventory/products",
+  INVENTORY_ADD: "/inventory/product/add",
+  INVENTORY_EDIT: "/inventory/product/edit/:id",
+  INVENTORY_DELETE: "inventory:delete",
+  PURCHASE_VIEW: "/inventory/purchases",
+  PURCHASE_CREATE: "/inventory/purchase",
+  PURCHASE_UPDATE: "purchases:update",
+  PURCHASE_ADD_PAYMENT: "purchases:add_payment",
+  
+  // Expenses
+  EXPENSES_VIEW: "/expenses",
+  EXPENSES_ADD: "/expenses/add",
+  EXPENSES_EDIT: "/expenses/edit/:id",
+  EXPENSES_DELETE: "expenses:delete",
+  
+  // Reports
+  REPORTS_VIEW: "/reports",
+  REPORTS_SALES: "reports:sales",
+  REPORTS_EXPENSES: "reports:expenses",
+  REPORTS_PROFIT_LOSS: "reports:profit-loss",
+  
+  // Users (Admin only)
+  USERS_VIEW: "/users",
+  USERS_ADD: "/users/add",
+  USERS_EDIT: "/users/edit/:id",
+  USERS_DELETE: "users:delete",
+  
+  // Settings (Admin only)
+  SETTINGS_VIEW: "/settings",
+  SETTINGS_EDIT: "settings:edit",
+  
+  // Opening Balance
+  OPENING_BALANCE_VIEW: "opening_balance:view",
+  OPENING_BALANCE_CREATE: "opening_balance:create",
+  OPENING_BALANCE_UPDATE: "opening_balance:update",
+  OPENING_BALANCE_DELETE: "opening_balance:delete",
+  
+  // Daily Confirmation
+  DAILY_CONFIRMATION_VIEW: "daily_confirmation:view",
+  DAILY_CONFIRMATION_CONFIRM: "daily_confirmation:confirm",
+  
+  // Daily Closing Balance
+  CLOSING_BALANCE_VIEW: "closing_balance:view",
+  CLOSING_BALANCE_CALCULATE: "closing_balance:calculate",
+  
+  // Balance Transactions
+  BALANCE_TRANSACTIONS_VIEW: "balance_transactions:view",
+  
+  // Bank Accounts
+  BANK_ACCOUNTS_VIEW: "bank_accounts:view",
+  BANK_ACCOUNTS_CREATE: "bank_accounts:create",
+  BANK_ACCOUNTS_UPDATE: "bank_accounts:update",
+  BANK_ACCOUNTS_DELETE: "bank_accounts:delete",
+  
+  // Cards
+  CARDS_VIEW: "cards:view",
+  CARDS_CREATE: "cards:create",
+  CARDS_UPDATE: "cards:update",
+  CARDS_DELETE: "cards:delete",
+  
+  // Backup
+  BACKUP_EXPORT: "backup:export",
+} as const;
+
+// Permission groups for UI
+export const PERMISSION_GROUPS = [
+  {
+    group: "Sales & Billing",
+    permissions: [
+      { key: "SALES_VIEW", label: "View Sales", value: AVAILABLE_PERMISSIONS.SALES_VIEW },
+      { key: "SALES_CREATE", label: "Create Sale", value: AVAILABLE_PERMISSIONS.SALES_CREATE },
+      { key: "SALES_VIEW_BILL", label: "View Bills", value: AVAILABLE_PERMISSIONS.SALES_VIEW_BILL },
+      { key: "SALES_CANCEL", label: "Cancel Sale", value: AVAILABLE_PERMISSIONS.SALES_CANCEL },
+    ],
+  },
+  {
+    group: "Inventory",
+    permissions: [
+      { key: "INVENTORY_VIEW", label: "View Products", value: AVAILABLE_PERMISSIONS.INVENTORY_VIEW },
+      { key: "INVENTORY_ADD", label: "Add Product", value: AVAILABLE_PERMISSIONS.INVENTORY_ADD },
+      { key: "INVENTORY_EDIT", label: "Edit Product", value: AVAILABLE_PERMISSIONS.INVENTORY_EDIT },
+      { key: "INVENTORY_DELETE", label: "Delete Product", value: AVAILABLE_PERMISSIONS.INVENTORY_DELETE },
+      { key: "PURCHASE_VIEW", label: "View Purchases", value: AVAILABLE_PERMISSIONS.PURCHASE_VIEW },
+      { key: "PURCHASE_CREATE", label: "Create Purchase", value: AVAILABLE_PERMISSIONS.PURCHASE_CREATE },
+    ],
+  },
+  {
+    group: "Expenses",
+    permissions: [
+      { key: "EXPENSES_VIEW", label: "View Expenses", value: AVAILABLE_PERMISSIONS.EXPENSES_VIEW },
+      { key: "EXPENSES_ADD", label: "Add Expense", value: AVAILABLE_PERMISSIONS.EXPENSES_ADD },
+      { key: "EXPENSES_EDIT", label: "Edit Expense", value: AVAILABLE_PERMISSIONS.EXPENSES_EDIT },
+      { key: "EXPENSES_DELETE", label: "Delete Expense", value: AVAILABLE_PERMISSIONS.EXPENSES_DELETE },
+    ],
+  },
+  {
+    group: "Reports",
+    permissions: [
+      { key: "REPORTS_VIEW", label: "View Reports", value: AVAILABLE_PERMISSIONS.REPORTS_VIEW },
+      { key: "REPORTS_SALES", label: "Sales Reports", value: AVAILABLE_PERMISSIONS.REPORTS_SALES },
+      { key: "REPORTS_EXPENSES", label: "Expense Reports", value: AVAILABLE_PERMISSIONS.REPORTS_EXPENSES },
+      { key: "REPORTS_PROFIT_LOSS", label: "Profit/Loss Reports", value: AVAILABLE_PERMISSIONS.REPORTS_PROFIT_LOSS },
+    ],
+  },
+  {
+    group: "Opening Balance",
+    permissions: [
+      { key: "OPENING_BALANCE_VIEW", label: "View Opening Balance", value: AVAILABLE_PERMISSIONS.OPENING_BALANCE_VIEW },
+      { key: "OPENING_BALANCE_CREATE", label: "Create Opening Balance", value: AVAILABLE_PERMISSIONS.OPENING_BALANCE_CREATE },
+      { key: "OPENING_BALANCE_UPDATE", label: "Update Opening Balance", value: AVAILABLE_PERMISSIONS.OPENING_BALANCE_UPDATE },
+      { key: "OPENING_BALANCE_DELETE", label: "Delete Opening Balance", value: AVAILABLE_PERMISSIONS.OPENING_BALANCE_DELETE },
+    ],
+  },
+  {
+    group: "Daily Confirmation",
+    permissions: [
+      { key: "DAILY_CONFIRMATION_VIEW", label: "View Daily Confirmation", value: AVAILABLE_PERMISSIONS.DAILY_CONFIRMATION_VIEW },
+      { key: "DAILY_CONFIRMATION_CONFIRM", label: "Confirm Daily Balance", value: AVAILABLE_PERMISSIONS.DAILY_CONFIRMATION_CONFIRM },
+    ],
+  },
+  {
+    group: "Balance & Transactions",
+    permissions: [
+      { key: "CLOSING_BALANCE_VIEW", label: "View Closing Balance", value: AVAILABLE_PERMISSIONS.CLOSING_BALANCE_VIEW },
+      { key: "CLOSING_BALANCE_CALCULATE", label: "Calculate Closing Balance", value: AVAILABLE_PERMISSIONS.CLOSING_BALANCE_CALCULATE },
+      { key: "BALANCE_TRANSACTIONS_VIEW", label: "View Transaction History", value: AVAILABLE_PERMISSIONS.BALANCE_TRANSACTIONS_VIEW },
+    ],
+  },
+  {
+    group: "User Management",
+    permissions: [
+      { key: "USERS_VIEW", label: "View Users", value: AVAILABLE_PERMISSIONS.USERS_VIEW },
+      { key: "USERS_ADD", label: "Add User", value: AVAILABLE_PERMISSIONS.USERS_ADD },
+      { key: "USERS_EDIT", label: "Edit User", value: AVAILABLE_PERMISSIONS.USERS_EDIT },
+      { key: "USERS_DELETE", label: "Delete User", value: AVAILABLE_PERMISSIONS.USERS_DELETE },
+    ],
+  },
+  {
+    group: "Settings",
+    permissions: [
+      { key: "SETTINGS_VIEW", label: "View Settings", value: AVAILABLE_PERMISSIONS.SETTINGS_VIEW },
+      { key: "SETTINGS_EDIT", label: "Edit Settings", value: AVAILABLE_PERMISSIONS.SETTINGS_EDIT },
+    ],
+  },
+];
+
+// Get default permissions for a role
+export const getDefaultPermissionsForRole = (role: string): string[] => {
+  const rolePermissions: Record<string, string[]> = {
+    superadmin: Object.values(AVAILABLE_PERMISSIONS),
+    admin: [
+      AVAILABLE_PERMISSIONS.SALES_VIEW,
+      AVAILABLE_PERMISSIONS.SALES_CREATE,
+      AVAILABLE_PERMISSIONS.SALES_VIEW_BILL,
+      AVAILABLE_PERMISSIONS.SALES_CANCEL,
+      AVAILABLE_PERMISSIONS.SALES_ADD_PAYMENT,
+      AVAILABLE_PERMISSIONS.INVENTORY_VIEW,
+      AVAILABLE_PERMISSIONS.INVENTORY_ADD,
+      AVAILABLE_PERMISSIONS.INVENTORY_EDIT,
+      AVAILABLE_PERMISSIONS.INVENTORY_DELETE,
+      AVAILABLE_PERMISSIONS.PURCHASE_VIEW,
+      AVAILABLE_PERMISSIONS.PURCHASE_CREATE,
+      AVAILABLE_PERMISSIONS.PURCHASE_UPDATE,
+      AVAILABLE_PERMISSIONS.PURCHASE_ADD_PAYMENT,
+      AVAILABLE_PERMISSIONS.EXPENSES_VIEW,
+      AVAILABLE_PERMISSIONS.EXPENSES_ADD,
+      AVAILABLE_PERMISSIONS.EXPENSES_EDIT,
+      AVAILABLE_PERMISSIONS.EXPENSES_DELETE,
+      AVAILABLE_PERMISSIONS.REPORTS_VIEW,
+      AVAILABLE_PERMISSIONS.REPORTS_SALES,
+      AVAILABLE_PERMISSIONS.REPORTS_EXPENSES,
+      AVAILABLE_PERMISSIONS.REPORTS_PROFIT_LOSS,
+      AVAILABLE_PERMISSIONS.USERS_VIEW,
+      AVAILABLE_PERMISSIONS.USERS_ADD,
+      AVAILABLE_PERMISSIONS.USERS_EDIT,
+      AVAILABLE_PERMISSIONS.USERS_DELETE,
+      AVAILABLE_PERMISSIONS.SETTINGS_VIEW,
+      AVAILABLE_PERMISSIONS.SETTINGS_EDIT,
+      AVAILABLE_PERMISSIONS.OPENING_BALANCE_VIEW,
+      AVAILABLE_PERMISSIONS.OPENING_BALANCE_CREATE,
+      AVAILABLE_PERMISSIONS.OPENING_BALANCE_UPDATE,
+      AVAILABLE_PERMISSIONS.OPENING_BALANCE_DELETE,
+      AVAILABLE_PERMISSIONS.DAILY_CONFIRMATION_VIEW,
+      AVAILABLE_PERMISSIONS.DAILY_CONFIRMATION_CONFIRM,
+      AVAILABLE_PERMISSIONS.CLOSING_BALANCE_VIEW,
+      AVAILABLE_PERMISSIONS.CLOSING_BALANCE_CALCULATE,
+      AVAILABLE_PERMISSIONS.BALANCE_TRANSACTIONS_VIEW,
+      AVAILABLE_PERMISSIONS.BANK_ACCOUNTS_VIEW,
+      AVAILABLE_PERMISSIONS.BANK_ACCOUNTS_CREATE,
+      AVAILABLE_PERMISSIONS.BANK_ACCOUNTS_UPDATE,
+      AVAILABLE_PERMISSIONS.BANK_ACCOUNTS_DELETE,
+      AVAILABLE_PERMISSIONS.CARDS_VIEW,
+      AVAILABLE_PERMISSIONS.CARDS_CREATE,
+      AVAILABLE_PERMISSIONS.CARDS_UPDATE,
+      AVAILABLE_PERMISSIONS.CARDS_DELETE,
+      AVAILABLE_PERMISSIONS.BACKUP_EXPORT,
+    ],
+    cashier: [
+      AVAILABLE_PERMISSIONS.SALES_VIEW,
+      AVAILABLE_PERMISSIONS.SALES_CREATE,
+      AVAILABLE_PERMISSIONS.SALES_VIEW_BILL,
+      AVAILABLE_PERMISSIONS.SALES_ADD_PAYMENT,
+      // Cashiers with sales permission can also access daily confirmation and opening balance view
+      AVAILABLE_PERMISSIONS.DAILY_CONFIRMATION_VIEW,
+      AVAILABLE_PERMISSIONS.DAILY_CONFIRMATION_CONFIRM,
+      AVAILABLE_PERMISSIONS.OPENING_BALANCE_VIEW,
+      AVAILABLE_PERMISSIONS.BALANCE_TRANSACTIONS_VIEW,
+    ],
+    warehouse_manager: [
+      AVAILABLE_PERMISSIONS.INVENTORY_VIEW,
+      AVAILABLE_PERMISSIONS.INVENTORY_ADD,
+      AVAILABLE_PERMISSIONS.INVENTORY_EDIT,
+      AVAILABLE_PERMISSIONS.PURCHASE_VIEW,
+      AVAILABLE_PERMISSIONS.PURCHASE_CREATE,
+      AVAILABLE_PERMISSIONS.PURCHASE_UPDATE,
+      AVAILABLE_PERMISSIONS.PURCHASE_ADD_PAYMENT,
+      // Warehouse managers with purchase permission can also access daily confirmation and opening balance view
+      AVAILABLE_PERMISSIONS.DAILY_CONFIRMATION_VIEW,
+      AVAILABLE_PERMISSIONS.DAILY_CONFIRMATION_CONFIRM,
+      AVAILABLE_PERMISSIONS.OPENING_BALANCE_VIEW,
+      AVAILABLE_PERMISSIONS.BALANCE_TRANSACTIONS_VIEW,
+    ],
+  };
+
+  return rolePermissions[role] || [];
+};
+
+
